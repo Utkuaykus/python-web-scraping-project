@@ -1,58 +1,72 @@
-# Python Web Scraping Project
+# 🕷️ Python Web Scraping Project
 
-Bu proje, **Books to Scrape** ve **Quotes to Scrape** web sitelerinden veri çekmek için geliştirilmiş iki farklı Python scripti içerir. Proje, hem statik (BeautifulSoup) hem de dinamik (Selenium) web kazıma tekniklerini örneklendirmektedir.
+![Python](https://img.shields.io/badge/Python-3.8%2B-3776AB?logo=python&logoColor=white)
+![Selenium](https://img.shields.io/badge/Selenium-4.0%2B-43B02A?logo=selenium&logoColor=white)
+![BeautifulSoup](https://img.shields.io/badge/BeautifulSoup-4-green)
+![Pandas](https://img.shields.io/badge/Pandas-Data-150458?logo=pandas&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-blue)
 
-## Özellikler
+> **Veri Toplama Sanatı:** Hem statik mimari (Requests/BS4) hem de dinamik tarayıcı otomasyonu (Selenium) kullanarak verileri özgürleştirin.
 
--   **Kitap Kazıma (`Books Scraper.py`):**
-    -   `requests` ve `BeautifulSoup` kullanarak statik sayfa yapısını tarar.
-    -   [books.toscrape.com](https://books.toscrape.com) sitesinden kitap adı, fiyatı ve açıklamasını çeker.
-    -   Verileri `books_dataset.xlsx` dosyasına kaydeder.
+Bu proje, modern web kazıma tekniklerini göstermek amacıyla **Books to Scrape** ve **Quotes to Scrape** platformları için geliştirilmiş, Excel çıktısı üreten modüler bir araç setidir.
 
--   **Alıntı Kazıma (`Quotes Scraper.py`):**
-    -   `selenium` kullanarak dinamik ve JavaScript içeren sayfaları tarar.
-    -   [quotes.toscrape.com](https://quotes.toscrape.com) sitesinden alıntı metni, yazar ve etiketleri toplar.
-    -   Verileri `quotes_dataset.xlsx` dosyasına kaydeder.
+---
 
-## Kurulum
+## 📂 Proje Yapısı
 
-1.  Bu depoyu (repository) klonlayın:
+```text
+.
+├── 📜 Books Scraper.py       # Statik kazıyıcı (Hızlı & Hafif - Requests)
+├── 📜 Quotes Scraper.py      # Dinamik kazıyıcı (Akıllı & Güçlü - Selenium)
+├── 📊 books_dataset.xlsx     # Otomatik üretilen kitap verileri
+├── 📊 quotes_dataset.xlsx    # Otomatik üretilen alıntı verileri
+├── ⚙️ requirements.txt       # Proje bağımlılıkları
+└── 📝 README.md              # Dokümantasyon
+```
+
+## 🚀 Özellikler
+
+| Özellik | Books Scraper | Quotes Scraper |
+|---------|---------------|----------------|
+| **Teknoloji** | `requests` + `BeautifulSoup` | `selenium` (Headless Chrome) |
+| **Hedef Site** | books.toscrape.com | quotes.toscrape.com |
+| **Yöntem** | HTTP İstekleri (Statik) | Tarayıcı Otomasyonu (Dinamik) |
+| **Hız** | ⚡ Çok Hızlı | 🐢 Orta (JS Bekleme Süreli) |
+| **Çıktı** | `.xlsx` (Excel) | `.xlsx` (Excel) |
+
+## 🛠️ Kurulum
+
+1.  **Depoyu Klonlayın**
     ```bash
     git clone https://github.com/Utkuaykus/python-web-scraping-project.git
     cd python-web-scraping-project
     ```
 
-2.  Gerekli kütüphaneleri yükleyin:
+2.  **Bağımlılıkları Yükleyin**
     ```bash
     pip install -r requirements.txt
     ```
 
-    *Gereksinimler:*
-    -   requests
-    -   beautifulsoup4
-    -   pandas
-    -   openpyxl (Excel çıktısı için)
-    -   selenium
+## 💻 Kullanım
 
-## Kullanım
-
-### Kitap Verilerini Çekme
-Bu script, tüm sayfaları gezerek kitap bilgilerini toplar.
+### 1. Kitapları Kazıma (Statik)
+Tüm kitap kataloğunu saniyeler içinde tarar.
 ```bash
 python "Books Scraper.py"
 ```
+> *Çıktı: `books_dataset.xlsx` (Kitap Adı, Fiyat, Stok Durumu, Açıklama)*
 
-### Alıntıları Çekme
-Bu script, Selenium ile tarayıcıyı (headless modda) açar ve tüm sayfalardaki alıntıları toplar.
+### 2. Alıntıları Kazıma (Dinamik)
+JavaScript ile yüklenen içerikleri gerçek bir tarayıcı gibi gezer.
 ```bash
 python "Quotes Scraper.py"
 ```
+> *Çıktı: `quotes_dataset.xlsx` (Alıntı, Yazar, Etiketler)*
 
-## Notlar
+---
 
--   **Selenium Sürücüsü:** `Quotes Scraper.py` çalıştırıldığında bilgisayarınızda yüklü olan Google Chrome sürümü ile uyumlu bir ChromeDriver'a ihtiyaç duyabilir. Selenium 4.6+ sürümü kullanıyorsanız, sürücü yönetimi otomatik yapılacaktır.
--   **Etik Kullanım:** Bu scriptler yalnızca eğitim amaçlıdır ve [toscrape.com](https://toscrape.com) sandbox ortamında çalışmak üzere tasarlanmıştır.
+## 📝 Lisans
+Bu proje [MIT](LICENSE) lisansı ile korunmaktadır. Özgürce kullanabilir, değiştirebilir ve dağıtabilirsiniz.
 
-## Lisans
-
-Bu proje MIT lisansı altında lisanslanmıştır. Detaylar için `LICENSE` dosyasına bakınız.
+---
+*Geliştirici: [Utku Aykuş](https://github.com/Utkuaykus)*
